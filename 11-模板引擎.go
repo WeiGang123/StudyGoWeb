@@ -7,7 +7,7 @@ import (
 )
 
 func tmpl(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("11-tmpl.html")
+	t, _ := template.ParseFiles("template/11-tmpl.html")
 	if t != nil {
 		t.Execute(w, "Hello World!")
 	} else {
@@ -19,6 +19,6 @@ func main() {
 	server := http.Server{
 		Addr: "127.0.0.1:8080",
 	}
-	http.HandleFunc("/process", tmpl)
+	http.HandleFunc("/tmpl", tmpl)
 	server.ListenAndServe()
 }
