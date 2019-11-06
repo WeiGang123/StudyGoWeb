@@ -1,12 +1,14 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"net/http"
 )
 
 func process(w http.ResponseWriter, r *http.Request) {
 	t, _ := template.ParseFiles("tmpl.html")
+	fmt.Println(t, r)
 	t.Execute(w, "Hello World!")
 }
 
