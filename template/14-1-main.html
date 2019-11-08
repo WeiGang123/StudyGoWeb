@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主模版</title>
+</head>
+<body>
+
+<h1>嵌套模板</h1>
+<p>这里是主模版的内容{{ . }}</p>
+
+{{ with "world" }}
+    <p>这里是设置动作，用with end包括起来的内容里面可以自己设置值 {{ . }} </p>
+{{ end }}
+
+<hr />
+<p>在这里加个.可以将其传入被包含的模板，要不然值不会被传入</p>
+{{ template "14-2-t.html" . }}
+
+</body>
+</html>
