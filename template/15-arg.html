@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>模板中的参数，变量，管道的使用</h2>
+
+<p>变量以$开头</p>
+
+{{ range $key, $val := . }}
+    <p>The key is ["{{ $key }}"] and the value is ["{{ $val }}"].</p>
+{{ end }}
+
+<p>管道</p>
+<p>使用模板内置的函数printf对浮点数进行格式化后输出</p>
+{{ 12.345 | printf "%.2f" }}
+
+</body>
+</html>
