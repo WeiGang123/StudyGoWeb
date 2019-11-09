@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>直接传递</p>
+The time is {{ fdate . }} <br />
+
+<p>利用管道来传递</p>
+The time is {{ . | fdate }} <br />
+<p>利用管道比直接传参强大和灵活，当多个函数的时候，可以利用管道让一个函数的结果作为另一个函数的输入，以不同的方式来组合</p>
+
+</body>
+</html>
