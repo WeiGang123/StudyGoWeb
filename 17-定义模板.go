@@ -2,7 +2,9 @@ package main
 
 import (
 	"html/template"
+	"math/rand"
 	"net/http"
+	"time"
 )
 
 // 在之前我们使用包含动作来实现了模板 但这种方式不适合开发复杂的Web应用
@@ -10,7 +12,13 @@ import (
 // 为此，我们可以使用定义动作(define action)在模板文件里面显式的定义模板
 
 func layout(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("template/17-layout.html")
+	rand.Seed(time.Now().Unix())
+	var t *template.Template
+	if rand.Intn(10) > 5 {
+		t, _ = template.ParseFiles("template/17-layout.html", "template/17-content.html")
+	} else {
+		t, _ = template.ParseFiles("template/17-layout.html")
+	}
 	t.ExecuteTemplate(w, "layout", "")
 }
 
