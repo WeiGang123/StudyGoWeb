@@ -9,19 +9,22 @@
 <body>
     <p>在这里传入名为content的模板</p>
     <hr />
-    {{ template "content" }}
-    <hr />
+{{/*    {{ template "content" }} */}}
+
     {{ block "content" . }}
         <p>这是块动作，块动作可以高效的定义一个模板</p>
         <p>比如这个块模板叫做content，它放在layout模板中，
             如果引擎没有找到content模板就会使用块模板中定义的content模板。</p>
     {{ end }}
+
+    <hr />
 </body>
 </html>
 
 {{ end }}
 
-
+{{ /*
 {{ define "content" }}
     <p>一个文件可以定义多个模板</p>
 {{ end }}
+*/ }}
