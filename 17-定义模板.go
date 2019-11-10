@@ -17,6 +17,7 @@ func layout(w http.ResponseWriter, r *http.Request) {
 	if rand.Intn(10) > 5 {
 		t, _ = template.ParseFiles("template/17-layout.html", "template/17-content.html")
 	} else {
+		// 当我们只分析layout.html文件时就找不到content模板，这时调用的block定义的content模板
 		t, _ = template.ParseFiles("template/17-layout.html")
 	}
 	t.ExecuteTemplate(w, "layout", "")
