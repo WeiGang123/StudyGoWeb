@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8043c95-dfce-4aef-b9fb-c8fbd51e9dd3" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/20-gob包对二进制文件的读写.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/21-go连接数据库.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,18 +35,36 @@
         <entry file="file://$PROJECT_DIR$/19-对CSV文件的读写.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1216">
-              <caret line="69" column="43" lean-forward="true" selection-start-line="69" selection-start-column="43" selection-end-line="69" selection-end-column="43" />
+              <caret line="69" column="43" selection-start-line="69" selection-start-column="43" selection-end-line="69" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/20-gob包对二进制文件的读写.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="874">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/setup.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/20-gob包对二进制文件的读写.go">
+        <entry file="file://$PROJECT_DIR$/21-go连接数据库.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+            <state relative-caret-position="437">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
               <folding>
-                <element signature="e#14#49#0" expanded="true" />
+                <element signature="e#14#74#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,6 +114,8 @@
         <option value="$PROJECT_DIR$/08-ResponseWriter.go" />
         <option value="$PROJECT_DIR$/19-对CSV文件的读写.go" />
         <option value="$PROJECT_DIR$/20-gob包对二进制文件的读写.go" />
+        <option value="$PROJECT_DIR$/setup.sql" />
+        <option value="$PROJECT_DIR$/21-go连接数据库.go" />
       </list>
     </option>
   </component>
@@ -118,7 +139,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -135,6 +155,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -178,15 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build 20-gob包对二进制文件的读写.go">
-    <configuration name="go build 16-模板中的函数.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="StudyGoWeb" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/16-模板中的函数.go" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build 21-go连接数据库.go">
     <configuration name="go build 17-定义模板.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="StudyGoWeb" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -219,13 +232,22 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+    <configuration name="go build 21-go连接数据库.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="StudyGoWeb" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/21-go连接数据库.go" />
+      <package value="study/web/StudyGoWeb" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build 21-go连接数据库.go" />
         <item itemvalue="Go Build.go build 20-gob包对二进制文件的读写.go" />
         <item itemvalue="Go Build.go build 19-对CSV文件的读写.go" />
         <item itemvalue="Go Build.go build 18-对文件的读写.go" />
         <item itemvalue="Go Build.go build 17-定义模板.go" />
-        <item itemvalue="Go Build.go build 16-模板中的函数.go" />
       </list>
     </recent_temporary>
   </component>
@@ -253,26 +275,26 @@
     <frame x="-1088" y="-842" width="1096" height="1906" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18822394" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19594595" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295711" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49903476" visible="true" weight="0.12810384" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49903476" weight="0.12810384" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3295711" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4980695" weight="0.3295711" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32900676" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49903476" weight="0.32900676" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3295711" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50096524" side_tool="true" visible="true" weight="0.12810384" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49903476" visible="true" weight="0.32900676" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50096524" side_tool="true" weight="0.3295711" />
       <window_info anchor="bottom" id="调试" order="12" weight="0.3295711" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.3291506" />
+      <window_info anchor="right" id="Database" order="3" weight="0.24324325" />
       <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.3291506" />
     </layout>
   </component>
@@ -332,7 +354,8 @@
     <MESSAGE value="go与表单" />
     <MESSAGE value="服务端向客户端发送相应" />
     <MESSAGE value="对CSV文件的读取" />
-    <option name="LAST_COMMIT_MESSAGE" value="对CSV文件的读取" />
+    <MESSAGE value="gob包对二进制文件的读写" />
+    <option name="LAST_COMMIT_MESSAGE" value="gob包对二进制文件的读写" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/StudyGoWeb$go_test_11_.out" NAME="go test 11-模板初试 Coverage Results" MODIFIED="1573028928116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -443,19 +466,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data1">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data2">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data1" />
+    <entry file="file://$PROJECT_DIR$/data2" />
+    <entry file="file://$PROJECT_DIR$/posts.csv" />
     <entry file="file://$PROJECT_DIR$/01-server.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -577,16 +590,30 @@
     <entry file="file://$PROJECT_DIR$/19-对CSV文件的读写.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1216">
-          <caret line="69" column="43" lean-forward="true" selection-start-line="69" selection-start-column="43" selection-end-line="69" selection-end-column="43" />
+          <caret line="69" column="43" selection-start-line="69" selection-start-column="43" selection-end-line="69" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/20-gob包对二进制文件的读写.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+        <state relative-caret-position="874">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/21-go连接数据库.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
           <folding>
-            <element signature="e#14#49#0" expanded="true" />
+            <element signature="e#14#74#0" expanded="true" />
           </folding>
         </state>
       </provider>
