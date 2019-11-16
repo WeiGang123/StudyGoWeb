@@ -6,6 +6,8 @@ import (
 	_ "github.com/lib/pq" // 导入数据库驱动
 )
 
+// 数据库中表结构事先写好，表事先建好，然后我们使用一个和表字段值一样的结构体来表示数据
+// 我们在进行增删改查的时候都是依靠这个结构创建的变量来进行的。
 type post struct {
 	Id      int
 	Content string
@@ -33,17 +35,24 @@ func init() {
 	}
 }
 
+// 一次获取多条数据
 func posts(limit int) (posts1 []post, err error) {
+	// 使用sql.DB结构的Query方法来执行查询，这个方法会返回一个Rows接口
 	rows, err := Db.Query("select id, content, author from posts limit $1", limit)
 	if err != nil {
 		return
 	}
+	// Rows接口是一个迭代器，程序可以通过重复调用它的Next方法来对其进行迭代并获取相应的sql.Row
+	// 当所有行都被迭代完毕之后，Next方法会返回io.EOF作为结果
 	for rows.Next() {
+		// 每次迭代都会创建一个结构
 		myPost := post{}
+		// 将数据存入到刚创建的结构中
 		err = rows.Scan(&myPost.Id, &myPost.Content, &myPost.Author)
 		if err != nil {
 			return
 		}
+		// 将结构追加到切片中
 		posts1 = append(posts1, myPost)
 	}
 	rows.Close()
@@ -62,6 +71,7 @@ func getPost(id int) (myPost post, err error) {
 	return
 }
 
+// 插入操作
 func (myPost *post) Create() (err error) {
 	// 定义一条SQL预处理语句，这就是一个SQL语句模板，在执行时需要给语句中的参数提供具体值
 	statement := "insert into posts (content, author) values ($1, $2) returning id"
@@ -78,12 +88,14 @@ func (myPost *post) Create() (err error) {
 	return
 }
 
+// 更新操作
 func (myPost *post) Update() (err error) {
 	_, err = Db.Exec("update posts set content = $2, author = $3 "+
 		"where id = $1", myPost.Id, myPost.Content, myPost.Author)
 	return
 }
 
+// 删除操作
 func (myPost *post) Delete() (err error) {
 	_, err = Db.Exec("delete from posts where id = $1", myPost.Id)
 	return
